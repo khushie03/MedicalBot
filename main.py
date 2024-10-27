@@ -1,6 +1,6 @@
 import requests
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyDM9xdKD9JDW_wu6Lp1gnCraUK3Ds-DPNc")
+genai.configure(api_key= Your Gemini APIKEY)
 from transformers import PegasusTokenizer, PegasusForConditionalGeneration
 import pandas as pd
 import numpy as np
@@ -14,7 +14,7 @@ model = load_model("my_model.h5")
 print("Model loaded successfully.")
 
 API_URL = "https://api-inference.huggingface.co/models/blaze999/Medical-NER"
-headers = {"Authorization": "Bearer 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"}  
+headers = {"Authorization": "Bearer Your Hugging Face API Key"}  
 
 def query(payload, retries=5, wait_time=2):
     for attempt in range(retries):
@@ -26,7 +26,7 @@ def query(payload, retries=5, wait_time=2):
                 if 'currently loading' in data['error'].lower():
                     print("Model is loading, retrying...")
                     time.sleep(wait_time)
-                    continue  # Retry the request
+                    continue  
                 return None
             return data
         except Exception as e:

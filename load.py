@@ -1,6 +1,6 @@
 import requests
 API_URL = "https://api-inference.huggingface.co/models/blaze999/Medical-NER"
-headers = {"Authorization": "Bearer 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"}  
+headers = {"Authorization": "Bearer hf_key"}  
 
 def query(payload):
     try:
